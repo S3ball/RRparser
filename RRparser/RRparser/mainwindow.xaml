@@ -1,0 +1,35 @@
+﻿<Window x:Class="RRparser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:rRparser="clr-namespace:RRparser"
+        Title="RRparser" Height="245.941" Width="512.206" ResizeMode="NoResize" Icon="icon.ico">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="214*"/>
+            <ColumnDefinition Width="231*"/>
+            <ColumnDefinition Width="61*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox rRparser:Masking.Mask="^\d{1,5}$" HorizontalAlignment="Left"  Margin="67,144,0,0" x:Name="TextFromZip"
+        	VerticalAlignment="Top" Width="61" Height="19" FontSize="12" Padding="0" RenderTransformOrigin="0.77,0.609" Grid.Column="1" />
+        <Label Content="Zip:" Name="LabelZip" HorizontalAlignment="Left" Margin="34,139,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.5,0.192" Grid.Column="1"/>
+
+        <TextBox HorizontalAlignment="Left"  Margin="171,36,0,0" Name="FileNameTextBox"
+                 VerticalAlignment="Top" Width="288" IsEnabled="False" Height="39" FontSize="14" Padding="8" Grid.ColumnSpan="3" />
+        <Button Content="Browse"  HorizontalAlignment="Left" Margin="54,36,0,0"
+                Name="BtnOpenFile" VerticalAlignment="Top" Width="117" Click="btnOpenFile_Click" Height="39" Background="Black" BorderBrush="Black" FontFamily="Microsoft JhengHei Light" FontSize="18" Foreground="White" FontWeight="Bold" />
+        <TextBox HorizontalAlignment="Left"  Margin="171,80,0,0" x:Name="DirectoryName"
+        	VerticalAlignment="Top" Width="288" IsEnabled="False" Height="39" FontSize="14" Padding="8" Grid.ColumnSpan="3" />
+        <Button Content="Output"  HorizontalAlignment="Left" Margin="54,80,0,0"
+        	x:Name="BtnDirectory" VerticalAlignment="Top" Width="117" Click="btnDirectory_Click" Height="39" Background="Black" BorderBrush="Black" FontFamily="Microsoft JhengHei Light" FontSize="18" Foreground="White" FontWeight="Bold" />
+        <StackPanel Margin="176,131,168,54" Grid.ColumnSpan="2">
+            <RadioButton x:Name="RadioRates" GroupName="xlsFiles" Content="Rates" IsChecked="True" FontFamily="Microsoft JhengHei Light" Checked="RadioRates_Checked"/>
+            <RadioButton x:Name="RadioRoutes" GroupName="xlsFiles" Content="Routes" FontFamily="Microsoft JhengHei Light" Checked="RadioRoutes_Checked" HorizontalAlignment="Left" Width="101" />
+        </StackPanel>
+
+        <Button Content="Export"  HorizontalAlignment="Left" Margin="54,124,0,0"
+        	x:Name="BtnExport" VerticalAlignment="Top" Width="117" Click="btnExport_Click" Height="39" Background="Black" BorderBrush="Black" FontFamily="Microsoft JhengHei Light" FontSize="18" Foreground="White" FontWeight="Bold" />
+
+
+    </Grid>
+</Window>
